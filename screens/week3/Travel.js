@@ -20,7 +20,6 @@ export default function Travel() {
                 <MyIcon title='บ้าน' name='home' size={30} color='orange' />
                 <MyIcon title='แก้ไข' name='edit' size={30} color='orange' />
                 <MyIcon title='ลบ' name='trash' size={30} color='orange' />
-                
             </View>
         </ScrollView>
     );

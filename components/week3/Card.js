@@ -5,7 +5,7 @@ export default function Card() {
     return (
         <View style={{ padding : 20  }}>
             {/* View1 */}
-            <View style= {{ flexDirection : 'row',paddingHorizontal : 10 }}> 
+            <View style= {{ flexDirection : 'row', paddingHorizontal : 10 }}> 
                 <Image style={{ width: 50 , height : 50, borderRadius : 50/2 }} source={ require('../../assets/week3/profile-2.jpg')} />
                 <View style={{ paddingLeft : 10 }}>
                     <Text style={{ fontSize : 20 }} >Steve Garrett</Text>
