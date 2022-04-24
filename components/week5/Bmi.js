@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { Button, TextInput, Text } from "react-native";
 
+
 export default function Bmi() {
     const [weight, setWeight] = useState('70');
     const [height, setHeight] = useState('170');
