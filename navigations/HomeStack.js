@@ -92,17 +92,17 @@ export default function HomeStack() {
             <Stack.Screen
                 name="Travel"
                 component={Travel}
-                options={{ title: "Travel" }}
+                options={{ title: "Travel"  ,headerShown : false}}
             />
             <Stack.Screen
                 name="Resort"
                 component={Resort}
-                options={{ title: "Resort" }}
+                options={{ title: "Resort" ,headerShown : false }}
             />
             <Stack.Screen
                 name="Health"
                 component={Health}
-                options={{ title: "Health" }}
+                options={{ title: "Health" ,headerShown : false }}
             />
         </Stack.Navigator>
     );

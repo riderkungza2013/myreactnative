@@ -1,5 +1,6 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { Button, ScrollView, Text, View } from 'react-native';
 import Section1 from '../../components/week4/Section1';
 import Section2 from '../../components/week4/Section2';
 import Section3 from '../../components/week4/Section3';
@@ -10,7 +11,9 @@ import Section7 from '../../components/week4/Section7';
 import Section8 from '../../components/week4/Section8';
 
 export default function Resort() {
+    const navigation = useNavigation();
     return (
+        <View style={{ flex: 1 }}>
         <ScrollView>
             <View style={{ flex: 1, paddingTop : 10 , margin : 10 }}>
 
@@ -26,5 +29,7 @@ export default function Resort() {
                 <Section8 />
             </View>
         </ScrollView>
+        <Button title="กลับ" onPress={() => navigation.goBack("")} />
+        </View>
     );
 }
