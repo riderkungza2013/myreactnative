@@ -32,9 +32,9 @@ export default function Event(props) {
                         return (
                             <View style={{ marginRight: 10  }}>
                                 <Image style={{ width: 250, height: 150, borderRadius: 10 }} source={{ uri: item.uri }} />
-                                <View style={{ backgroundColor: 'black', width: 250, height: 50, opacity: 0.5, padding: 10, marginTop: -50, borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}>
+                                <View style={{ backgroundColor: 'black', width: 250, height: 50, opacity: 0.0, padding: 10, marginTop: -50, borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}>
                                 </View>
-                                <View style={{ borderBottomLeftRadius: 10, borderBottomRightRadius: 10, borderWidth: 3 , borderColor: 'white'}}>
+                                <View style={{ borderBottomLeftRadius: 10, borderBottomRightRadius: 10, borderWidth: 0.5 , borderColor: 'grey' }}>
                                     <View style={{ padding: 5, flexDirection: 'row' }}>
                                         <Text style={{ fontSize: 15, color: 'red', textAlign: 'left' }} >{item.month}</Text>
                                         <Text style={{ fontSize: 15, color: 'black', textAlign: 'right' }}> {item.title}</Text>
