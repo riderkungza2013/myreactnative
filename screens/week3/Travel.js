@@ -24,8 +24,8 @@ export default function Travel() {
                 <MyIcon title='แก้ไข' name='edit' size={30} color='orange' />
                 <MyIcon title='ลบ' name='trash' size={30} color='orange' />
             </View>
+            <Button title="กลับ" onPress={() => navigation.goBack("")} />
         </ScrollView>
-        <Button title="กลับ" onPress={() => navigation.goBack("")} />
         </View>
     );
 }

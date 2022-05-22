@@ -28,8 +28,8 @@ export default function Resort() {
                 <Section7 />
                 <Section8 />
             </View>
+            <Button title="กลับ" onPress={() => navigation.goBack("")} />
         </ScrollView>
-        <Button title="กลับ" onPress={() => navigation.goBack("")} />
         </View>
     );
 }
