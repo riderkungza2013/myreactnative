@@ -50,7 +50,7 @@ export default function MyMapView(props) {
             if (props.recordLocation) {
             console.log('SEND TO SERVER')
             LocationLaravel.storeItem({
-              user_id: 'Phongpeera Luangpinij',
+              user_id: 'Jirawat Kornsopha',
               latitude: event.nativeEvent.coordinate.latitude,
               longitude: event.nativeEvent.coordinate.longitude,
             })
