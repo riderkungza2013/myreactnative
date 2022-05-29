@@ -1,5 +1,7 @@
+import * as mime from "mime";
+
 // const url_endpoint = "http://localhost/laravel8/public/api/book";
-const url_endpoint = "http://192.168.21.25/laravel8/public/api/book";
+const url_endpoint = "http://192.168.130.93/laravel8/public/api/book";
 
 const getItems = async () => {
   try {
@@ -23,11 +25,29 @@ const getItemDetail = async (item) => {
 
 const storeItem = async (item) => {
   try {
+    //CREATE FORM DATA
+    let data = new FormData();
+    for (let key in item) {
+      if (key == "image") continue;
+      data.append(key, item[key]);
+    }
+    if (item.image.split(":")[0] == "file") {
+      //ATTACHED FILE
+      data.append("image", {
+        uri: item.image,
+        name: item.image.split("/").pop(),
+        type: mime.getType(item.image),
+      });
+    }
+
     let body = {
       method: "POST",
-      body: JSON.stringify(item),
-      headers: { "Content-Type": "application/json" },
+      // body: JSON.stringify(item),
+      body: data,
+      // headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "multipart/form-data" },
     };
+
     let response = await fetch(url_endpoint, body);
     let result = await response.json();
     return result;
@@ -38,11 +58,31 @@ const storeItem = async (item) => {
 
 const updateItem = async (item) => {
   try {
+    //CREATE FORM DATA
+    console.log("UPDATE", item);
+    let data = new FormData();
+    for (let key in item) {
+      if (key == "image") continue;
+      data.append(key, item[key]);
+    }
+    data.append("_method", "PUT");
+    if (item.image.split(":")[0] == "file") {
+      //ATTACHED FILE
+      data.append("image", {
+        uri: item.image,
+        name: item.image.split("/").pop(),
+        type: mime.getType(item.image),
+      });
+    }
+    console.log(data);
     let body = {
-      method: "PUT", //PUT or PATCH
-      body: JSON.stringify(item),
-      headers: { "Content-Type": "application/json" },
+      method: "POST",
+      // body: JSON.stringify(item),
+      body: data,
+      // headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "multipart/form-data" },
     };
+
     let response = await fetch(url_endpoint + "/" + item.id, body);
     let result = await response.json();
     return result;
@@ -66,5 +106,5 @@ const destroyItem = async (item) => {
   }
 };
 
-export default { getItems, getItemDetail , storeItem , updateItem , destroyItem};
+export default { getItems, getItemDetail, storeItem, updateItem, destroyItem };
 
