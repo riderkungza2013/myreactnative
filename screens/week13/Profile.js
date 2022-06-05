@@ -9,7 +9,7 @@ export default function Profile(){
     const [ user, setUser ] = useState(null);
 
     useEffect(async()=>{
-        let u = await AuthLaravel.getUser("userToken");
+        let u = await AuthLaravel.getUser(userToken);
         setUser(u);
     },[]);
 
